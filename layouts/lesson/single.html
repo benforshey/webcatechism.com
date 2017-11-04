@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title .Section }} {{ .Page.Title }} | Web Catechism</title>
+    {{- $content := .Site.Data.content.question -}}
+    {{- $index := .Page.Params.index -}}
+    <meta name="description" content="{{ title .Section }} {{ .Page.Title }}: {{ index $content $index | safeHTML }}">
+
+    {{- partial "head-content.html" -}}
+
+    {{- $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" -}}
+    {{- $.Scratch.Add "path" .Site.BaseURL -}}
+    {{- $.Scratch.Add "breadcrumb" (slice (dict "url" .Site.BaseURL "name" "home" "position" 1 )) -}}
+    {{- range $index, $element := split $url "/" -}}
+        {{- $.Scratch.Add "path" $element -}}
+        {{- $.Scratch.Add "path" "/" -}}
+        {{- if ne $element "" -}}
+            {{- $.Scratch.Add "breadcrumb" (slice (dict "url" ($.Scratch.Get "path") "name" . "position" (add $index 2))) -}}
+        {{- end -}}
+    {{- end -}}
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "WebSite",
+            "name": "{{ .Site.Title }}",
+            "url": "{{ .Site.BaseURL }}"
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [{{- range $.Scratch.Get "breadcrumb" -}}{{- if ne .position 1 -}},{{- end -}}{
+                "@type": "ListItem",
+                "position": {{- .position -}},
+                "item": {
+                  "@id": "{{ .url }}",
+                  "name": "{{ .name }}"
+                }
+            }{{- end -}}]
+        }
+    </script>
+</head>
+<body data-part="{{- if lt .Title 21 -}} 1 {{- else if lt .Title 36 -}} 2 {{- else -}} 3 {{- end -}}">
+    {{- partial "header.html" -}}
+    <main class="site__content-container--lesson" role="main">
+        <article role="article">
+        {{- .Content -}}
+        </article>
+    </main>
+    {{- partial "footer.html" -}}
+</body>
+</html>

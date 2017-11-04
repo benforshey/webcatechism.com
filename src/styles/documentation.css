@@ -1,0 +1,63 @@
+
+.documentation__nav {
+  padding: 1em 6vw;
+  margin: 1em 0 2em;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list > li {
+  flex: 0 0 auto;
+}
+
+.introduction__dl {
+  color: #4F6D7A;
+  font-size: 1.125em;
+  margin: 1.25em;
+}
+
+.introduction__dl>dd {
+  margin-left: 0;
+}
+
+.faq__dl>dt>h2 {
+  margin-top: 2.5em;
+}
+
+.introduction__blockquote {
+  box-shadow: inset 4px 0 0 0 #526656;
+  color: #4F6D7A;
+  margin: 0;
+  padding: .125em 1.55em;
+}
+
+.introduction__blockquote>p {
+  font-size: 1.125em;
+  margin-top: 0;
+}
+
+.introduction__blockquote>cite {
+  color: #232321;
+  display: block;
+  box-shadow: 0 -.125em 0 0 #C4CDC6;
+}
+
+.introduction__ol {
+  color: #4F6D7A;
+  font-size: 1.125em;
+  list-style: none;
+  padding: 0;
+  margin: 1.25em;
+}
+
+.introduction__ul {
+  color: #4F6D7A;
+  margin: 1.5em;
+  padding: 0;
+}

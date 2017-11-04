@@ -1,0 +1,4 @@
+baseURL = "https://www.webcatechism.com/"
+languageCode = "en-us"
+title = "Web Catechism | Rightly Handling the Word"
+canonifyURLs = true

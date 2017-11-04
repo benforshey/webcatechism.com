@@ -1,0 +1,34 @@
+<div class="search__aria-results visually-hidden" aria-live="assertive" aria-relevant="additions text"></div>
+<div id="search-instructions" class="search__aria-instructions visually-hidden">
+    <p>Keyboard users, navigate using the <kbd>up</kbd> and <kbd>down</kbd> arrow keys. Select with the <kbd>enter</kbd> key. Exit the search and close the results using <kbd>escape</kbd>.</p>
+    <p>Touch users, navigate content with touch gestures.</p>
+</div>
+<form class="site__search" role="form" novalidate>
+    <div class="search__container">
+        <input
+            aria-autocomplete="list"
+            aria-describedby="search-instructions"
+            aria-expanded="false"
+            aria-invalid="false"
+            aria-label="Search Lessons"
+            aria-owns="search-results"
+            autocomplete="off"
+            class="search__input"
+            id="search"
+            maxlength="32"
+            placeholder="Search Lessons"
+            required
+            role="combobox"
+            type="search"
+        >
+        <svg class="search__icon" aria-label="Search Icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.095 58.818" role="img" aria-labelledby="search-title search-description">
+            <title id="search-title">Search Icon</title>
+            <description id="search-description">Magnifying glass, signifying searching.</description>
+            <path class="icon__svg-path" fill="#4C4C47" stroke="#4C4C47" d="M22.5 45A22.5 22.5 0 1 1 45 22.5 22.526 22.526 0 0 1 22.5 45zm0-43A20.5 20.5 0 1 0 43 22.5 20.523 20.523 0 0 0 22.5 2z"/>
+            <path class="icon__svg-path" fill="#4C4C47" stroke="#4C4C47" d="M40 41a1 1 0 0 1-.707-.293l-2-2a1 1 0 0 1 1.414-1.414l2 2A1 1 0 0 1 40 41z"/>
+            <path class="icon__svg-path" fill="#4C4C47" stroke="#4C4C47" d="M53.144 58.818h-.414L36.467 42.556l6.364-6.364 16.266 16.263v.414a5.956 5.956 0 0 1-5.95 5.947zm-13.85-16.262L53.54 56.8a3.957 3.957 0 0 0 3.535-3.535L42.83 39.02z"/>
+        </svg>
+    </div>
+    <div class="search__results is-hidden" aria-hidden="true" id="search-results" tabindex="0" role="listbox">
+    </div>
+</form>

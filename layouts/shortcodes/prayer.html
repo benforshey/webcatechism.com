@@ -1,0 +1,35 @@
+{{- $content := .Site.Data.content.prayer -}}
+{{- $index := .Page.Params.index -}}
+<section class="site__prayer">
+    <header class="prayer__header">
+        <h2>Prayer</h2>
+    </header>
+    <div class="prayer__content">
+        <section class="prayer__container prayer__container--combined">
+            <h3>Adult</h3>
+            {{- (index $content.adult $index).body | safeHTML -}}
+            <h4>Footnote</h4>
+            {{- (index $content.adult $index).footnote | safeHTML -}}
+            <h4>Attribution</h4>
+            {{- (index $content.adult $index).attribution | safeHTML -}}
+        </section>
+        <section class="prayer__container prayer__container--combined">
+            <h3>Child</h3>
+            {{- (index $content.child $index).body | safeHTML -}}
+            <h4>Attribution</h4>
+            {{- (index $content.child $index).attribution | safeHTML -}}
+        </section>
+        <div class="prayer__container prayer__container--adult">
+            {{- (index $content.adult $index).body | safeHTML -}}
+            <h3>Footnote</h3>
+            {{- (index $content.adult $index).footnote | safeHTML -}}
+            <h3>Attribution</h3>
+            {{- (index $content.adult $index).attribution | safeHTML -}}
+        </div>
+        <div class="prayer__container prayer__container--child">
+            {{- (index $content.child $index).body | safeHTML -}}
+            <h3>Attribution</h3>
+            {{- (index $content.child $index).attribution | safeHTML -}}
+        </div>
+    </div>
+</section>

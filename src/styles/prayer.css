@@ -1,0 +1,42 @@
+.prayer__footnote--adult,
+.prayer__attribution--adult,
+.prayer__attribution--child {
+  font-family: 'Alegreya Sans', Optima, Candara, sans-serif;
+  font-weight: 400;
+  font-size: .875em;
+  line-height: 1.25;
+}
+
+@media screen and (min-width: 43.75em ) {
+  .site__prayer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .prayer__header {
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 30%;
+    padding-right: 1em;
+    justify-content: flex-end;
+  }
+
+  .prayer__header > h2 {
+    margin-top: .75rem;
+  }
+
+  .prayer__content {
+    flex: 0 0 70%;
+  }
+
+  .prayer__container--combined h3 {
+    margin-top: .875rem;
+  }
+
+  .prayer__footnote--adult,
+  .prayer__attribution--adult,
+  .prayer__attribution--child {
+    font-size: .8em;
+    line-height: 1.3;
+  }
+}

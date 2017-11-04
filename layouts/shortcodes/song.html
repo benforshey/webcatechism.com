@@ -1,0 +1,45 @@
+{{- $content := .Site.Data.content.media.song -}}
+{{- $index := .Page.Params.index -}}
+<section class="site__song">
+    <header class="song__header">
+        <h2>Song</h2>
+    </header>
+    <div class="song__content">
+        <audio class='song__audio is-hidden' id="song-audio" preload='metadata'
+        src='/{{- (index (index $content $index) 0).source -}}' hidden>
+        </audio>
+        <div class="song__controls-container">
+            <button class="controls__button controls__button--play-pause" aria-label="Play all songs once." aria-pressed="false" aria-describedby="playlist">
+                <svg class="song__button-svg button-svg__play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 58.189">
+                    <title>Play</title>
+                    <path fill="#4C4C47" d="M0 58.19V0l50 29.095L0 58.19"/>
+                    <path fill="#4C4C47" d="M3.126 5.436v47.318l40.658-23.66L3.126 5.437"/>
+                </svg>
+                <svg class="song__button-svg button-svg__pause is-hidden" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                    <title>Pause</title>
+                    <path fill="#4C4C47" d="M0 0h19.802v49.505H0zm30.198.495H50V50H30.198z"/>
+                </svg>
+            </button>
+            <div class="controls__progress">
+                <div class="progress__indicator"></div>
+            </div>
+            <button aria-label="Loop this song." aria-pressed="false" class="controls__button controls__button--loop">
+                <svg class="song__button-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                    <title>Loop</title>
+                    <path class="song__svg-button-path" fill="#4C4C47" d="M2.083 25a22.918 22.918 0 0 1 43.332-10.417h-10a1.042 1.042 0 1 0 0 2.083h13.543V3.126a1.042 1.042 0 1 0-2.083 0v9.79A24.993 24.993 0 0 0 0 25a1.042 1.042 0 1 0 2.083 0zm46.875-1.042A1.04 1.04 0 0 0 47.918 25 22.918 22.918 0 0 1 4.584 35.417h10a1.042 1.042 0 1 0 0-2.083H1.042v13.54a1.042 1.042 0 1 0 2.083 0v-9.79A24.993 24.993 0 0 0 50 25a1.04 1.04 0 0 0-1.042-1.042z"/>
+                </svg>
+            </button>
+        </div>
+        <div class="song__playlist">
+            <h3>Playlist</h3>
+            <ol id="playlist" class="playlist__list">
+            {{- range (index $content $index) -}}
+                <li><a class="playlist__link link-unset" href="/{{- .source -}}" title="Click to play this song." aria-controls="song-audio">{{- .title -}}</a></li>
+            {{- end -}}
+            </ol>
+        </div>
+        <div class="song__documents">
+            <a href="/documents/questions-with-answers.pdf" title="Open lyrics PDF in this window.">View Song Lyrics</a>
+        </div>
+    </div>
+</section>

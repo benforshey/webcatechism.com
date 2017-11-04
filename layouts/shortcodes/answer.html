@@ -1,0 +1,32 @@
+{{- $answer := .Site.Data.content.answer -}}
+{{- $index := .Page.Params.index -}}
+<section class="site__answer">
+    <header class="answer__header">
+        <h2>Answer</h2>
+    </header>
+    <div class="answer__content">
+        <div class="answer__controls-container">
+            <button class="answer__control answer__control--reset" aria-label="Reset answer to original state.">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 22" role="img">
+                    <title>Reset Answer</title>
+                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M1 1h50M1 11h50M1 21h50" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <button class="answer__control answer__control--harder" aria-label="Hide some words in the answer.">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 22" role="img">
+                    <title>Harder Answer</title>
+                    <path fill="none" stroke="#FFFFFF" stroke-width="3" stroke-miterlimit="10" d="M30 1.006h22M1 21h22M1 11.006h11M14 1h8m.5 10.006h10m10.5 0h8M30.75 21h4.5M1 1h5m37 20h8" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+        <div class="answer__container answer__container--combined">
+            {{- index $answer.combined $index | safeHTML -}}
+        </div>
+        <div hidden class="answer__container answer__container--adult is-hidden">
+            {{- index $answer.adult $index | safeHTML -}}
+        </div>
+        <div hidden class="answer__container answer__container--child is-hidden">
+            {{- index $answer.child $index | safeHTML -}}
+        </div>
+    </div>
+</section>

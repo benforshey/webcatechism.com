@@ -1,0 +1,76 @@
+.answer__controls-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: .5em;
+}
+
+.answer__control {
+  align-items: center;
+  background: #4C4C47;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 1px 2px 0 1px #9D9D9A;
+  display: flex;
+  flex: 0 0 5em;
+  font-family: 'Alegreya Sans SC', Verdana, sans-serif;
+  font-size: .875em;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: .25em;
+  transition: box-shadow .3s cubic-bezier(0.59, 0.24, 0.01, 0.98);
+}
+
+body[data-part="1"] .answer__control:focus,
+body[data-part="1"] .answer__control:hover {
+  box-shadow: 1px 1px 0 2px #B75B4F;
+}
+
+body[data-part="2"] .answer__control:focus,
+body[data-part="2"] .answer__control:hover {
+  box-shadow: 1px 1px 0 2px #4F6D7A;
+}
+
+body[data-part="3"] .answer__control:focus,
+body[data-part="3"] .answer__control:hover {
+  box-shadow: 1px 1px 0 2px #526656;
+}
+
+body[data-part="1"] .answer__control:active,
+body[data-part="2"] .answer__control:active,
+body[data-part="3"] .answer__control:active {
+  box-shadow: none;
+}
+
+.answer__control > svg {
+  flex: 0 0 2em;
+  margin: 0 auto;
+  max-height: 1em;
+  max-width: 2em;
+}
+
+@media screen and (min-width: 43.75em) {
+  .site__answer {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .answer__header {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-right: 1em;
+    flex: 0 0 30%;
+  }
+
+  .answer__header > h2 {
+    margin-top: .75rem;
+  }
+
+  .answer__content {
+    flex: 0 0 70%;
+  }
+}
