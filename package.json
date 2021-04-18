@@ -30,9 +30,9 @@
     "postcss": "6.0.14",
     "postcss-cssnext": "3.0.2",
     "postcss-import": "11.0.0",
-    "postcss-loader": "2.0.8",
+    "postcss-loader": "^2.1.6",
     "webpack": "3.8.1",
-    "webpack-dev-server": "2.9.4"
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "fuse.js": "3.2.0",
