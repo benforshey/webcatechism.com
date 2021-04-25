@@ -1,0 +1,42 @@
+<!--
+    What: Have the Previous and Next links loop from 1 to 52.
+    How: Add 1 to the 0-based index param and set into a variable. Set up a previous and next variable. Check to see if the prev/next link would fall out of the correct range and correct if true.
+    Why: The home button should navigate users back to the home page, but users should be able to click the prev / next button (quickly, if desired) and stay within the lessons.
+-->
+{{- $lesson := add .Page.Params.index 1 -}}
+{{- $prev := sub $lesson 1 -}}
+{{- $next := add $lesson 1 -}}
+<nav class="site__navbar" role="navigation">
+    <ul class="navbar__list">
+        <li>
+            <a class="navbar__link navbar__link--previous link-unset" href="/lesson/{{- if lt $prev 1 -}} 52/ {{- else -}} {{- printf "%02d" $prev -}} / {{- end -}}" aria-label="Go to Lesson {{ if lt $prev 1 }}52{{ else }}{{ printf "%02d" $prev}}{{ end }}">
+                <svg class="navbar__image--arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.243 48.828" role="img" aria-labelledby="navbar-previous-title navbar-previous-description">
+                    <title id="navbar-previous-title">Previous</title>
+                    <desc id="navbar-previous-description">This link will take you to the previous lesson.</desc>
+                    <path class="navbar__image-path" fill="#4C4C47" stroke="#4C4C47" d="M24.414 48.828L0 24.414 24.414 0l2.83 2.828L5.656 24.414 27.243 46l-2.83 2.828"/>
+                </svg>
+                <span class="navbar__text">{{- if lt $prev 1 -}} 52 {{- else -}}{{- printf "%02d" $prev -}}{{- end -}}</span>
+            </a>
+        </li>
+        <li >
+            <a class="navbar__link link-unset" href="/" aria-label="Go to Home Page">
+                <svg class="navbar__image--home" alt="Icon representing a home." xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.335 56.343" role="img" aria-labelledby="navbar-home-title navbar-home-description">
+                    <title id="navbar-home-title">Home</title>
+                    <desc id="navbar-home-description">This link will take you to the home page.</desc>
+                    <path class="navbar__image-path" fill="#4C4C47" stroke="#4C4C47" d="M58 28.088l-28.332-25.4-28.333 25.4L0 26.598 29.668 0l29.667 26.6L58 28.087"/>
+                    <path class="navbar__image-path" fill="#4C4C47" stroke="#4C4C47" d="M52.666 28.62L29.668 8l-23 20.62v27.723h46zm-16 25.723h-14v-18a6.007 6.007 0 0 1 6-6h2a6.007 6.007 0 0 1 6 6zm2 0v-18a8.01 8.01 0 0 0-8-8h-2a8.01 8.01 0 0 0-8 8v18h-12v-24.83l21-18.827 21 18.826v24.83z"/>
+                </svg>
+            </a>
+        </li>
+        <li>
+            <a class="navbar__link navbar__link--next link-unset" href="/lesson/{{- if gt $next 52 -}} 01/ {{- else -}} {{- printf "%02d" $next -}} / {{- end -}}" aria-label="Go to Lesson {{ if gt $next 52 }}01{{ else }}{{ printf "%02d" $next }}{{ end }}">
+                <span class="navbar__text">{{- if gt $next 52 -}} 01 {{- else -}}{{- printf "%02d" $next -}}{{- end -}}</span>
+                <svg class="navbar__image--arrow" alt="Icon representing a right arrow." xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.243 48.828" role="img" aria-labelledby="navbar-next-title navbar-next-description">
+                    <title id="navbar-next-title">Next</title>
+                    <desc id=navbar-next-description>This link will take you to the next lesson.</desc>
+                    <path class="navbar__image-path" fill="#4C4C47" stroke="#4C4C47" d="M2.828 48.828L0 46l21.585-21.586L0 2.828 2.828 0l24.415 24.414L2.828 48.828"/>
+                </svg>
+            </a>
+        </li>
+    </ul>
+</nav>

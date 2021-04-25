@@ -1,0 +1,16 @@
+{{- $content := .Site.Data.content.commentary -}}
+{{- $index := .Page.Params.index -}}
+<section class="site__commentary">
+    <header class="commentary__header">
+        <h2>Commentary</h2>
+    </header>
+    <div class="commentary__content">
+        {{- (index $content $index).body | safeHTML -}}
+        <h3>Footnote</h3>
+        {{- (index $content $index).footnote | safeHTML -}}
+        <h3>Attribution</h3>
+        {{- (index $content $index).attribution | safeHTML -}}
+        <h3>Further Reading</h3>
+        {{- (index $content $index).further | safeHTML -}}
+    </div>
+</section>

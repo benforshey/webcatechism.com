@@ -1,0 +1,37 @@
+.site__lesson-resume {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.lesson-resume__decoration {
+  margin: 0 .5em;
+  max-height: 2em;
+  width: 2em;
+}
+
+.site__welcome {
+  margin: 3em 0 6em;
+  padding: 1em;
+  border: 4px double #4C4C4C;
+  position: relative;
+  border-radius: 4px;
+}
+
+.site__welcome > h2 {
+  margin-top: 0;
+}
+
+.welcome__settings-menu--inline > svg {
+  width: 1em;
+  height: 1em;
+}
+
+.welcome__corner-decorator {
+  height: 8em;
+  position: absolute;
+  width: 8em;
+  top: -1em;
+  right: -1em;
+}

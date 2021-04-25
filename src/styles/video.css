@@ -1,0 +1,36 @@
+.video__content {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+
+.video__content--iframe {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 43.75em ) {
+  .site__video {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .video__header {
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 30%;
+    padding-right: 1em;
+    justify-content: flex-end;
+  }
+
+  .video__header > h2 {
+    margin-top: 0;
+  }
+
+  .video__content {
+    flex: 0 0 70%;
+  }
+}

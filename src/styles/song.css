@@ -1,0 +1,120 @@
+.song__controls-container {
+  align-items: center;
+  border: 2px solid #9D9D9A;
+  display: flex;
+  justify-content: space-between;
+  padding: .5em;
+}
+
+.controls__button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex: 0 0 1.5em;
+  outline: none;
+  padding: 0;
+}
+
+.song__button-svg path {
+  transition: fill .3s cubic-bezier(0.59, 0.24, 0.01, 0.98);
+}
+
+.controls__button:focus .song__button-svg path,
+.controls__button:hover .song__button-svg path,
+.controls__button:active .song__button-svg path {
+  fill: #EE6352;
+}
+
+.song__button-svg {
+  height: 2em;
+  width: 2em;
+}
+
+.loop__is-active {
+  animation: spin 8s linear infinite;
+}
+
+.loop__is-active path {
+  fill: #EE6352;
+}
+
+.controls__progress {
+  box-shadow: inset -1px -1px 0 0 #9D9D9A, inset 1px 1px 0 0 #9D9D9A;
+  user-select: none;
+  cursor: default;
+  align-items: center;
+  display: flex;
+  flex: 0 1 70%;
+}
+
+.progress__indicator {
+  flex: 0 0 0%;
+  height: .75em;
+}
+
+body[data-part="1"] .progress__indicator {
+  background: #B75B4F;
+}
+
+body[data-part="2"] .progress__indicator {
+  background: #4F6D7A;
+}
+
+body[data-part="3"] .progress__indicator {
+  background: #526656;
+}
+
+.playlist__list {
+  font-family: 'Alegreya Sans', Optima, Candara, sans-serif;
+  padding: 0 0 0 .75em;
+}
+
+a.playlist__link {
+  color: #232321;
+  transition: color .3s cubic-bezier(0.59, 0.24, 0.01, 0.98);
+}
+
+a.playlist__link:focus,
+a.playlist__link:hover,
+a.playlist__link:active {
+  color: #EE6352;
+}
+
+a.playlist__link--active {
+  box-shadow: 0 2px 0 0 #EE6352;
+}
+
+.song__documents {
+  font-family: 'Alegreya Sans', Optima, Candara, sans-serif;
+}
+
+@media screen and (min-width: 43.75em ) {
+  .site__song {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .song__header {
+    align-items: flex-start;
+    display: flex;
+    flex: 0 0 30%;
+    padding-right: 1em;
+    justify-content: flex-end;
+  }
+
+  .song__header > h2 {
+    margin-top: 0;
+  }
+
+  .song__controls-container {
+    flex: 0 0 100%;
+    justify-content: space-around;
+  }
+
+  .song__content {
+    flex: 0 0 70%;
+  }
+}

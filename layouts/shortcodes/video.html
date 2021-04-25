@@ -1,0 +1,10 @@
+{{- $content := .Site.Data.content.media.video -}}
+{{- $index := .Page.Params.index -}}
+<section class="site__video">
+    <header class="video__header">
+        <h2>Video</h2>
+    </header>
+    <div class="video__content">
+        <iframe class="video__content--iframe" src="https://www.youtube.com/embed/{{- (index $content $index).youTube -}}?rel=0&modestbranding=1&showinfo=0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</section>

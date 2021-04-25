@@ -1,0 +1,30 @@
+.site__header {
+  align-items: center;
+  border-bottom: 4px double #9D9D9A;
+  display: flex;
+  flex-wrap: wrap;
+  height: 6em;
+  justify-content: space-between;
+  padding: 1vw 6vw;
+  position: relative;
+}
+
+.header__wordmark-container {
+  flex: 0 0 auto;
+  font-family: 'Alegreya Sans SC', Verdana, sans-serif;
+  line-height: 1;
+}
+
+.header__wordmark-container a {
+  color: #4C4C47;
+}
+
+.header__wordmark {
+  margin: 0;
+}
+
+@media screen and (min-width: 31.25em ) {
+  .site__header {
+    height: 4em;
+  }
+}

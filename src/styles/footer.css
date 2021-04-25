@@ -1,0 +1,44 @@
+.site__footer {
+  background: #4C4C47;
+  color: #FFFFFF;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Alegreya Sans', Optima, Candara, sans-serif;
+  font-size: .875em;
+  font-weight: 300;
+  justify-content: space-between;
+  letter-spacing: .03125em;
+  line-height: 1.25;
+  margin-top: 8em;
+  padding: 1em 6vw 2em;
+  word-spacing: .03125em;
+}
+
+.footer__section {
+  flex: 0 0 100%;
+}
+
+.footer__heading {
+  letter-spacing: .03125em;
+  word-spacing: .03125em;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.footer__nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site__footer a,
+.site__footer a:link {
+  box-shadow: inset 0 -1px 0 0 #B6C5D5;
+  color: #B6C5D5;
+}
+
+@media screen and (min-width: 31.25em ) {
+  .footer__section {
+    flex: 0 0 45%;
+  }
+}

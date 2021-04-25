@@ -1,0 +1,41 @@
+{
+  "name": "web-catechism",
+  "version": "1.0.0",
+  "description": "A PWA remake of the New City Catechism",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch",
+    "webpack": "webpack -p",
+    "hugo": "rm -fR public && hugo",
+    "build": "npm run webpack && npm run hugo"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benforshey/webcatechism.git"
+  },
+  "author": "Ben Forshey",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/benforshey/webcatechism/issues"
+  },
+  "homepage": "https://github.com/benforshey/webcatechism#readme",
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-preset-env": "1.6.1",
+    "css-loader": "0.28.7",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "1.1.5",
+    "postcss": "6.0.14",
+    "postcss-cssnext": "3.0.2",
+    "postcss-import": "11.0.0",
+    "postcss-loader": "^2.1.6",
+    "webpack": "3.8.1",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "fuse.js": "3.2.0",
+    "lodash.debounce": "4.0.8"
+  }
+}

@@ -1,0 +1,53 @@
+.question__lesson-number {
+  align-items: center;
+  border-bottom: 4px double #9D9D9A;
+  display: flex;
+  justify-content: center;
+  margin: 1em 0 2em;
+  padding: 1em 0;
+}
+
+.lesson-number__decoration {
+  margin: 0 1em;
+  width: 12%;
+}
+
+.lesson-number__text {
+  font-size: calc(1.44em + .5vw);
+}
+
+body[data-part="1"] .lesson-number__text {
+  color: #B75B4F;
+}
+
+body[data-part="2"] .lesson-number__text {
+  color: #4F6D7A;
+}
+
+body[data-part="3"] .lesson-number__text {
+  /* Darker color green for WCAG 2.0 text.*/
+  color: #526656;
+}
+
+@media screen and (min-width: 43.75em) {
+  .site__question {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .question__header {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1em;
+    flex: 0 0 30%;
+  }
+
+  .question__header > h2 {
+    margin-top: .75rem;
+  }
+
+  .question__content {
+    flex: 0 0 70%;
+  }
+}
